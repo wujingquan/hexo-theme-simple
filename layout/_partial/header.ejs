@@ -1,0 +1,9 @@
+<header class="header">
+  <nav class="nav">
+    <% for (name in theme.menu) { if (theme.menu[name].match('http://') || theme.menu[name].match('https://')) { %>
+      <a href="<%- url_for(theme.menu[name]) %>" <% if (is_current(theme.menu[name])) { %> class="active" <% } %> target="_blank"><%= name %></a>
+      <% } else { %>
+        <a href="<%- url_for(theme.menu[name]) %>" <% if (is_current(theme.menu[name])) { %> class="active" <% } %>><%= name %></a>
+    <% }} %>
+  </nav>
+</header>
